@@ -114,12 +114,13 @@ namespace MonoTouch.Dialog
 		
 		public static UIImage MakeCalendarBadge (UIImage template, string smallText, string bigText)
 		{
-			using (var cs = CGColorSpace.CreateDeviceRGB ()){
-				using (var context = new CGBitmapContext (IntPtr.Zero, 57, 57, 8, 57*4, cs, CGImageAlphaInfo.PremultipliedLast)){
+			using (var cs = CGColorSpace.CreateDeviceRGB ()) {
+				using (var context = new CGBitmapContext (IntPtr.Zero, 57, 57, 8, 57*4, cs, CGImageAlphaInfo.PremultipliedLast)) {
 					//context.ScaleCTM (0.5f, -1);
 					context.TranslateCTM (0, 0);
 					context.DrawImage (new RectangleF (0, 0, 57, 57), template.CGImage);
-					context.SetRGBFillColor (1, 1, 1, 1);
+					context.SetFillColor (1, 1, 1, 1);
+					//context.SetRGBFillColor (1, 1, 1, 1);
 					
 					context.SelectFont ("Helvetica", 10f, CGTextEncoding.MacRoman);
 					
@@ -129,11 +130,11 @@ namespace MonoTouch.Dialog
 					context.ShowText (smallText);
 					var width = context.TextPosition.X - start;
 					
-					var ns = new NSString (smallText);
-					UIFont ff = UIFont.FromName ("Helvetica", 10);
+					//var ns = new NSString (smallText);
+					//UIFont ff = UIFont.FromName ("Helvetica", 10);
 					
 					context.SetTextDrawingMode (CGTextDrawingMode.Fill);
-					context.ShowTextAtPoint ((57-width)/2, 46, smallText);
+					context.ShowTextAtPoint ((57 - width) / 2, 46, smallText);
 					
 					// The big string
 					context.SelectFont ("Helvetica-Bold", 32, CGTextEncoding.MacRoman);					
@@ -142,7 +143,8 @@ namespace MonoTouch.Dialog
 					context.ShowText (bigText);
 					width = context.TextPosition.X - start;
 					
-					context.SetRGBFillColor (0, 0, 0, 1);
+					//context.SetRGBFillColor (0, 0, 0, 1);
+					context.SetFillColor (0, 0, 0, 1);
 					context.SetTextDrawingMode (CGTextDrawingMode.Fill);
 					context.ShowTextAtPoint ((57-width)/2, 9, bigText);
 					

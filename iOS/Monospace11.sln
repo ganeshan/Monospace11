@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monospace11", "Monospace11.csproj", "{EFAEF3CA-CBCF-49E2-A52A-069372D79667}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoTouch.Dialog", "MonoTouch.Dialog\MonoTouch.Dialog.csproj", "{3FFBFFF8-5560-4EDE-82E5-3FFDFBBA8A50}"
@@ -43,7 +43,7 @@ Global
 		$1.ResourceNamePolicy = FileFormatDefault
 		$0.StandardHeader = $2
 		$2.Text = 
-		$2.inheritsSet = Apache2License
+		$2.IncludeInNewFiles = True
 		$0.VersionControlPolicy = $3
 		$3.inheritsSet = Mono
 		$0.ChangeLogPolicy = $4

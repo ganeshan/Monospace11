@@ -340,13 +340,13 @@ namespace MonoTouch.Dialog
 		public float Value;
 		public float MinValue, MaxValue;
 		static NSString skey = new NSString ("FloatElement");
-		UIImage Left, Right;
+		//UIImage Left, Right;
 		UISlider slider;
 		
 		public FloatElement (UIImage left, UIImage right, float value) : base (null)
 		{
-			Left = left;
-			Right = right;
+			//Left = left;
+			//Right = right;
 			MinValue = 0;
 			MaxValue = 1;
 			Value = value;
@@ -785,9 +785,10 @@ namespace MonoTouch.Dialog
 		
 		static UIImage MakeEmpty ()
 		{
-			using (var cs = CGColorSpace.CreateDeviceRGB ()){
-				using (var bit = new CGBitmapContext (IntPtr.Zero, dimx, dimy, 8, 0, cs, CGImageAlphaInfo.PremultipliedFirst)){
-					bit.SetRGBStrokeColor (1, 0, 0, 0.5f);
+			using (var cs = CGColorSpace.CreateDeviceRGB ()) {
+				using (var bit = new CGBitmapContext (IntPtr.Zero, dimx, dimy, 8, 0, cs, CGImageAlphaInfo.PremultipliedFirst)) {
+					//bit.SetRGBStrokeColor (1, 0, 0, 0.5f);
+					bit.SetStrokeColor (1, 0, 0, 0.5f);
 					bit.FillRect (new RectangleF (0, 0, dimx, dimy));
 					
 					return UIImage.FromImage (bit.ToImage ());
