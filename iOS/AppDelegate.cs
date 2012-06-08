@@ -59,7 +59,7 @@ namespace Monospace11
 					xmlPath = Path.Combine(basedir, XmlDataFilename);
 				}
 	
-				long start = DateTime.Now.Ticks;
+				//long start = DateTime.Now.Ticks;
 				using (TextReader reader = new StreamReader(xmlPath))
 				{
 					XmlSerializer serializer = new XmlSerializer(typeof(Conference2));

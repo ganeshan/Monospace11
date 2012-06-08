@@ -113,7 +113,7 @@ namespace Monospace11
 			return true;
 		}
 		
-		UIBarButtonItem item2;
+		//UIBarButtonItem item2;
 		
 		public HomeViewController () : base (null)
 		{
